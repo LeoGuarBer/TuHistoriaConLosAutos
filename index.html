@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Los autos y tú</title>
+<!-- FUENTES MODERNAS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+<div class="header">
+<h2>Tu historia con los autos 🚗</h2>
+<p class="subtitulo">
+Anónima • ~3 minutos • Sin respuestas correctas o incorrectas
+</p>
+</div>
+
+<!-- BARRA DE PROGRESO -->
+<div class="barra-fondo">
+<div id="barra-progreso"></div>
+</div>
+
+<!-- P1 -->
+<div class="pregunta paso" id="p1">
+<h3><strong>1) ¿Cuántos años tienes y a qué te dedicas?</strong></h3>
+<textarea id="r1"></textarea>
+<button onclick="avanzar('p1','p2',10)">Siguiente</button>
+</div>
+
+<!-- P2 -->
+<div class="pregunta paso oculto" id="p2">
+<h3><strong>2) ¿Tienes un amor por los autos?</strong></h3>
+<button onclick="avanzar('p2','p3',20)">Sí</button>
+<button onclick="avanzar('p2','p3',20)">Más o menos</button>
+<button onclick="avanzar('p2','p3',20)">No mucho</button>
+</div>
+
+<!-- P3 -->
+<div class="pregunta paso oculto" id="p3">
+<h3><strong>3) ¿Qué tipo de autos son tus favoritos?</strong></h3>
+<textarea id="r3"></textarea>
+<button onclick="avanzar('p3','p4',30)">Siguiente</button>
+</div>
+
+<!-- P4 (quiebre) -->
+<div class="pregunta paso oculto" id="p4">
+<h3><strong>4) ¿Posees un automóvil actualmente?</strong></h3>
+<button onclick="mostrarSiAuto()">Sí</button>
+<button onclick="mostrarNoAuto()">No</button>
+</div>
+
+<!-- RAMA SÍ TIENE AUTO -->
+
+<div class="pregunta paso oculto" id="p5">
+<h3><strong>5) ¿Cómo lo conseguiste?</strong></h3>
+<textarea id="r_si1"></textarea>
+<button onclick="avanzar('p5','p6',50)">Siguiente</button>
+</div>
+
+<div class="pregunta paso oculto" id="p6">
+<h3><strong>6) ¿Qué fue lo más difícil?</strong></h3>
+<textarea id="r_si2"></textarea>
+<button onclick="avanzar('p6','p7',60)">Siguiente</button>
+</div>
+
+<div class="pregunta paso oculto" id="p7">
+<h3><strong>7) ¿Qué quieres modificar o por qué carro lo cambiarías?</strong></h3>
+<textarea id="r_si3"></textarea>
+<button onclick="avanzar('p7','p8',70)">Continuar</button>
+</div>
+
+<!-- RAMA NO TIENE AUTO -->
+
+<div class="pregunta paso oculto" id="p5b">
+<h3><strong>5) ¿Qué es lo que más te frustra de no tenerlo?</strong></h3>
+<textarea id="r_no1"></textarea>
+<button onclick="avanzar('p5b','p6b',50)">Siguiente</button>
+</div>
+
+<div class="pregunta paso oculto" id="p6b">
+<h3><strong>6) ¿Cómo te sientes cuando ves amigos con auto?</strong></h3>
+<textarea id="r_no2"></textarea>
+<button onclick="avanzar('p6b','p7b',60)">Siguiente</button>
+</div>
+
+<div class="pregunta paso oculto" id="p7b">
+<h3><strong>7) ¿Qué crees que te ha detenido hasta ahora?</strong></h3>
+<textarea id="r_no3"></textarea>
+<button onclick="avanzar('p7b','p8',70)">Continuar</button>
+</div>
+
+<!-- P8 -->
+<div class="pregunta paso oculto" id="p8">
+<h3><strong>8) ¿Qué contenido relacionado con autos ves?</strong></h3>
+<textarea id="r8"></textarea>
+<button onclick="avanzar('p8','p9',80)">Siguiente</button>
+</div>
+
+<!-- P9 (quiebre ahorro) -->
+<div class="pregunta paso oculto" id="p9">
+<h3><strong>9) ¿Has intentado ahorrar o trabajar para un auto?</strong></h3>
+<button onclick="mostrarSiAhorro()">Sí</button>
+<button onclick="mostrarNoAhorro()">No</button>
+</div>
+
+<div class="pregunta paso oculto" id="p10">
+<h3><strong>10) ¿Qué intentaste y qué pasó?</strong></h3>
+<textarea id="r_ahorro1"></textarea>
+<button onclick="avanzar('p10','p11',90)">Continuar</button>
+</div>
+
+<div class="pregunta paso oculto" id="p10b">
+<h3><strong>10) ¿Por qué no lo has intentado?</strong></h3>
+<textarea id="r_ahorro2"></textarea>
+<button onclick="avanzar('p10b','p11',90)">Continuar</button>
+</div>
+
+<!-- P11 -->
+<div class="pregunta paso oculto" id="p11">
+<h3><strong>11) ¿En qué gastas dinero relacionado con autos?</strong></h3>
+<textarea id="r11"></textarea>
+<button onclick="avanzar('p11','p12',95)">Siguiente</button>
+</div>
+
+<!-- P12 -->
+<div class="pregunta paso oculto" id="p12">
+<h3><strong>12) ¿Cómo te ves en un año (relacionado con autos)?</strong></h3>
+<textarea id="r12"></textarea>
+<button onclick="avanzar('p12','p13',98)">Siguiente</button>
+</div>
+
+<!-- P13 -->
+<div class="pregunta paso oculto" id="p13">
+<h3><strong>13) ¿Qué te haría sentir más cerca de tu objetivo?</strong></h3>
+<textarea id="r13"></textarea>
+<button onclick="enviarRespuestas(); mostrarFinal();">Enviar</button>
+
+</div>
+
+<div id="final" class="oculto">
+<h2>¡Gracias por responder! 🙌</h2>
+<p>Tu respuesta ayudará mucho al proyecto.</p>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
