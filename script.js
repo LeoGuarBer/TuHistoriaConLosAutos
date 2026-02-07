@@ -50,7 +50,7 @@ function mostrarFinal(){
     actualizarBarra(100);
 }
 
-const URL_SHEETS = "https://script.google.com/macros/s/AKfycbykdXkvBqRKoTGGEFTF8gG6aWZuFk6ukCSrDZ1eKc6E6AwalxS8l4xln0rwmylhAHG-/exec";
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbzd-qSwsFFgBsk_NLjfx-Azc6wbF6SlbibJQRvabf-qXSJ99zFjsTyWtEdrYjsdl9x1/exec";
 
 function enviarRespuestas(){
 
