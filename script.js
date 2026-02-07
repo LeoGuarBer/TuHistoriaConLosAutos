@@ -54,33 +54,39 @@ function mostrarFinal(){
 const URL_SHEETS = "https://script.google.com/macros/s/AKfycbxK8ao-nX4qieMr5GL1qWWcyKR3iCnir_WhHr6DgWnepdKwar96RCyM-a0tq2_h0LGk/exec";
 
 function enviarRespuestas(){
+
     const payload = {
-    r1: document.getElementById("r1").value,
-    r2: "respondido",
-    r3: document.getElementById("r3").value,
-    tieneAuto: window.tieneAuto || "No",
-    si1: document.getElementById("r_si1")?.value || "",
-    si2: document.getElementById("r_si2")?.value || "",
-    si3: document.getElementById("r_si3")?.value || "",
-    no1: document.getElementById("r_no1")?.value || "",
-    no2: document.getElementById("r_no2")?.value || "",
-    no3: document.getElementById("r_no3")?.value || "",
-    r8: document.getElementById("r8").value,
-    intentoAhorro: window.intentoAhorro || "No",
-    ahorro1: document.getElementById("r_ahorro1")?.value || "",
-    ahorro2: document.getElementById("r_ahorro2")?.value || "",
-    r11: document.getElementById("r11").value,
-    r12: document.getElementById("r12").value,
-    r13: document.getElementById("r13").value
+        r1: document.getElementById("r1").value,
+        r2: "respondido",
+        r3: document.getElementById("r3").value,
+        tieneAuto: window.tieneAuto || "No",
+        si1: document.getElementById("r_si1")?.value || "",
+        si2: document.getElementById("r_si2")?.value || "",
+        si3: document.getElementById("r_si3")?.value || "",
+        no1: document.getElementById("r_no1")?.value || "",
+        no2: document.getElementById("r_no2")?.value || "",
+        no3: document.getElementById("r_no3")?.value || "",
+        r8: document.getElementById("r8").value,
+        intentoAhorro: window.intentoAhorro || "No",
+        ahorro1: document.getElementById("r_ahorro1")?.value || "",
+        ahorro2: document.getElementById("r_ahorro2")?.value || "",
+        r11: document.getElementById("r11").value,
+        r12: document.getElementById("r12").value,
+        r13: document.getElementById("r13").value
     };
 
     fetch(URL_SHEETS, {
         method: "POST",
+        mode: "no-cors",               
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify(payload)
     })
-    .then(res => res.text())
     .then(() => {
-    console.log("Enviado a Sheets");
-    });
+        console.log("Solicitud enviada a Sheets");
+    })
+    .catch(err => console.error("Error:", err));
 }
+
 
