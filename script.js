@@ -15,7 +15,6 @@ function actualizarBarra(p){
     barra.style.flexGrow = p / 100;
 }
 
-
 // Flujo de AUTO
 function mostrarSiAuto(){
     window.tieneAuto = "Sí";
@@ -45,13 +44,13 @@ function mostrarNoAhorro(){
     actualizarBarra(85);
 }
 
-
 function mostrarFinal(){
     ocultarTodo();
     document.getElementById("final").classList.remove("oculto");
     actualizarBarra(100);
 }
-const URL_SHEETS = "https://script.google.com/macros/s/AKfycbxK8ao-nX4qieMr5GL1qWWcyKR3iCnir_WhHr6DgWnepdKwar96RCyM-a0tq2_h0LGk/exec";
+
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbykdXkvBqRKoTGGEFTF8gG6aWZuFk6ukCSrDZ1eKc6E6AwalxS8l4xln0rwmylhAHG-/exec";
 
 function enviarRespuestas(){
 
