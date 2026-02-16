@@ -2,11 +2,38 @@
     BASE Y TIPOGRAFÍA
 ======================= */
 
-body{
+body {
     margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(180deg, #0B132B, #060B18);
+    min-height: 100vh;
+    background-color: #0b132b; /* fondo oscuro base */
+    position: relative;
+    overflow-x: hidden;
     color:#EAEFF5;
+}
+
+/* Capa decorativa */
+body::before {
+    content: "";
+    position: fixed;
+    top: -100px;
+    left: -200px;
+    width: 120%;
+    height: 120%;
+    transform: rotate(-25deg);
+    z-index: -1;
+
+background: linear-gradient(
+    to right,
+    #5fa9ff 0%,
+    #5fa9ff 15%,
+    #4b2ca3 15%,
+    #4b2ca3 30%,
+    #e10600 30%,
+    #e10600 45%,
+    transparent 45%
+);
+
+    opacity: 0.15;
 }
 
 /* Títulos con estilo */
